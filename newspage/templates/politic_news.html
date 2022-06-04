@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for politic in object_list %}
+        <div>
+            <h2>
+                <a href="{% url 'politic_detail' politic.pk %}"> {{politic.title}} </a>
+            </h2>
+        </div>
+    {% endfor %}
+    <div>
+        <a href="{% url 'politic_new_post' %}">+ New blog politic post</a>
+    </div>
+{% endblock content %}
+

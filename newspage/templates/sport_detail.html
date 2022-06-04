@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <h2>
+            {{sport.title}}
+        </h2>
+        <p>
+            {{sport.text}}
+        </p>
+    </div>
+    <div>
+        <h4>
+            {{sport.author}}
+        </h4>
+    </div>
+    <a href="{% url 'sport_news_edit' sport.pk %}">+ Edit Sport_News</a>
+{% endblock content%}
+
+

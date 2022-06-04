@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <h1> 
+            {{technology.title}}
+        </h1>
+        </br>
+        <p>
+            {{technology.text}}
+        </p>
+    </div>
+    <div>
+        {{technology.author}}
+    </div>
+    <a href="{% url 'technology_news_edit' technology.pk %}">+ Edit Technology_News</a>
+{% endblock content %}
+

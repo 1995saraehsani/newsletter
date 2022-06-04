@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        <h1>
+            {{politic.title}}
+        </h1>
+        <p>
+            {{politic.text}}
+        </p>
+    </div>
+    <div>
+        {{politic.author}}
+    </div>
+    <a href="{% url 'politic_news_edit' politic.pk %}">+ Edit Politic_News</a>
+{% endblock content %}
+

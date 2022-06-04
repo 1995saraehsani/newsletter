@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for newspage in object_list %}
+        <div>
+            <h2>
+                <a href="{% url 'technology_detail' newspage.pk %}"> {{newspage.title}} </a>
+            </h2>
+        </div>
+
+    {% endfor %}
+    <div>
+        <a href="{% url 'technology_new_post' %}">+ New blog technology post</a> 
+    </div>
+
+{% endblock content %}
