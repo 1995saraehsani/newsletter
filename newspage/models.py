@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models.deletion import CASCADE
+from datetime import date
 from django.urls import reverse
 
 # Create your models here.
@@ -10,6 +11,9 @@ class AuthorSportPage(models.Model):
         on_delete=CASCADE,
         null=True,
         blank=True,
+    )
+    date=models.DateField(
+        auto_now=True
     )
     text=models.TextField()
     def __str__(self):
@@ -26,6 +30,9 @@ class AuthorTechnologyPage(models.Model):
         null=True,
         blank=True,
     )
+    date=models.DateField(
+        auto_now=True
+    )
     text=models.TextField()
     def __str__(self):
         return self.text
@@ -41,6 +48,9 @@ class AuthorPoliticPage(models.Model):
         on_delete=CASCADE,
         null=True,
         blank=True,
+    )
+    date=models.DateField(
+        auto_now=True
     )
     text=models.TextField()
     def __str__(self):

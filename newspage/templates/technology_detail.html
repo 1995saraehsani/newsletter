@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
     <div>
         <h1> 
             {{technology.title}}
@@ -11,8 +12,17 @@
         </p>
     </div>
     <div>
-        {{technology.author}}
+        <h3>
+            {{technology.author}}
+        </h3>
     </div>
-    <a href="{% url 'technology_news_edit' technology.pk %}">+ Edit Technology_News</a>
+    <div>
+        <h4>
+            {{technology.date}}
+        </h4>
+    </di>
+    <a href="{% url 'technology_news_edit' technology.pk %}">+ Edit Technology_News</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{% url 'technology_news_delete' technology.pk  %}">+ Delete Technology_News</a>
+    
 {% endblock content %}
 

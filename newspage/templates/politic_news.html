@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
     {% for politic in object_list %}
         <div>
             <h2>
@@ -11,5 +12,6 @@
     <div>
         <a href="{% url 'politic_new_post' %}">+ New blog politic post</a>
     </div>
+    
 {% endblock content %}
 

@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView,ListView, DetailView
-from django.views.generic.edit import CreateView ,UpdateView
+from django.views.generic.edit import CreateView ,UpdateView ,DeleteView
 from .models import AuthorSportPage , AuthorTechnologyPage , AuthorPoliticPage
+from django.urls import reverse_lazy
+
 # Create your views here.
 class HomePageView(ListView):
     model=AuthorSportPage
@@ -26,6 +28,12 @@ class SportUpdateView(UpdateView):
     context_object_name='sport'
     template_name='sport_news_edit.html'
     fields=['title','text']
+
+class SportDeleteView(DeleteView):
+    model=AuthorSportPage
+    context_object_name="sport"
+    template_name='sport_news_delete.html'
+    success_url=reverse_lazy('sport_news')
    
 class TechnologyPageView(ListView):
     model=AuthorTechnologyPage
@@ -46,6 +54,12 @@ class TechnologyUpdateView(UpdateView):
     context_object_name='technology'
     template_name='technology_news_edit.html'
     fields= ['title','text']
+    
+class TechnologyDeleteView(DeleteView):
+    model=AuthorTechnologyPage
+    context_object_name='technology'
+    template_name='technology_news_delete.html'
+    success_url= reverse_lazy('technology_news')
        
 class PoliticPageView(ListView):
     model=AuthorPoliticPage
@@ -67,5 +81,10 @@ class PoliticUpdateView(UpdateView):
     template_name='politic_news_edit.html'
     fields=['title','text']
     
+class PoliticDeleteView(DeleteView):
+    model=AuthorPoliticPage
+    template_name='politic_news_delete.html'
+    context_object_name='politic'
+    success_url= reverse_lazy('politic_news')
 class CallMeView(TemplateView):
     template_name='call_me.html'

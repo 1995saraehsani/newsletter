@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
+
 {% block content %}
+
     <div>
         <h1>
             {{politic.title}}
@@ -9,8 +11,17 @@
         </p>
     </div>
     <div>
-        {{politic.author}}
+        <h3>
+            {{politic.author}}
+        </h3>
     </div>
-    <a href="{% url 'politic_news_edit' politic.pk %}">+ Edit Politic_News</a>
+    <div>
+        <h4>
+            {{politic.date}}
+        </h4>
+    </div>
+    <a href="{% url 'politic_news_edit' politic.pk %}">+ Edit Politic_News</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{% url 'politic_news_delete' politic.pk %}">+ Delete Politic_News</a>
+    
 {% endblock content %}
 

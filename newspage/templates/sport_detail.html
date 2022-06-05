@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
     <div>
         <h2>
             {{sport.title}}
@@ -10,11 +11,18 @@
         </p>
     </div>
     <div>
-        <h4>
+        <h3>
             {{sport.author}}
+        </h3>
+    </div>
+    <div>
+        <h4>
+            {{sport.date}}
         </h4>
     </div>
-    <a href="{% url 'sport_news_edit' sport.pk %}">+ Edit Sport_News</a>
+    <a href="{% url 'sport_news_edit' sport.pk %}">+ Edit Sport_News</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{% url 'sport_news_delete' sport.pk %}">+ Delete Sport_News</a>
+    
 {% endblock content%}
 
 
