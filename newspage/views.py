@@ -8,7 +8,6 @@ from django.urls import reverse_lazy
 class HomePageView(ListView):
     model=AuthorSportPage
     template_name="home.html"
-    
 class SportPageView(ListView):
     model=AuthorSportPage
     template_name='sport_news.html'

@@ -1,17 +1,24 @@
-<header>
-    <div>
-        <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'sport_news' %}">Sport News</a>
-        <a href="{% url 'technology_news' %}">Technology News</a>
-        <a href="{% url 'politic_news' %}">Politic News</a>
-        <a href="{% url 'call_me' %}">Cantact Information</a>
-    </div> 
-
-</header>
 <body>
+    <header>
+        <div>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'sport_news' %}">Sport News</a>
+            <a href="{% url 'technology_news' %}">Technology News</a>
+            <a href="{% url 'politic_news' %}">Politic News</a>
+            <a href="{% url 'call_me' %}">Cantact Information</a>
+        </div> 
+    </header>
+    {% if user.is_authenticated %}
+        <p>Hi {{user.username}}</p>
+        <p><a href='{% url 'logout' %}'><h3>Log out</h3></p>
+        <h3>Welcome to my newsletter</h3>
+    {% else %}
+        <p>You are not Logged in</p>
+        <a href='{% url 'login' %}'><h3>Log in</h3></a>
+    {% endif %}
     <div>
-    {% block content %}
+        {% block content %}
 
-    {% endblock content %}
+        {% endblock content %}
     </div>
 </body>
